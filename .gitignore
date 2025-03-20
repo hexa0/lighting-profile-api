@@ -1,0 +1,8 @@
+# Builds
+
+build/*.rbxmx
+build/*.rbxm
+build/*.rbxl
+build/*.rbxlx
+src/test.server.lua
+sourcemap.json
