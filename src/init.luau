@@ -22,13 +22,32 @@ export type LightingProfilePublic = {
 	INSTANCE: ModuleScript;
 	CURRENT_VERSION: VersionData;
 
+	--[[
+		Decodes the instance representation of the ProfileData,
+		this will do nothing if it is already a ProfileData object.
+	]]
 	DecodeProfileDataFromInstance: (self: LightingProfilePublic, profileObject: Instance | ProfileData) -> ProfileData;
+	--[[
+		Encodes a ProfileData object into a roblox instance that represents the ProfileData.
+	]]
 	EncodeProfileDataAsInstance: (self: LightingProfilePublic, profile: ProfileData) -> Configuration;
 	--[[
-		Applies the provided profile as the current lighting.
+		Applies the given profile, accepts either an instance representation of the ProfileData or the ProfileData directly.
 	]]
 	ApplyProfile: (self: LightingProfilePublic, profile: Instance | ProfileData) -> ();
+	--[[
+		Creates a ProfileData object from the current lighting.
+	]]
 	CreateProfileDataFromCurrentLighting: (self: LightingProfilePublic) -> ProfileData;
+	--[[
+		Creates an instance representing the ProfileData object of the current lighting,
+		this is shorthand for
+		```luau
+			LightingProfile:EncodeProfileDataAsInstance(
+				LightingProfile:CreateProfileDataFromCurrentLighting()
+			)
+		```
+	]]
 	CreateProfileInstanceFromCurrentLighting: (self: LightingProfilePublic) -> Configuration;
 }
 
