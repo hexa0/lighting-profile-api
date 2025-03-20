@@ -24,6 +24,9 @@ export type LightingProfilePublic = {
 
 	DecodeProfileDataFromInstance: (self: LightingProfilePublic, profileObject: Instance | ProfileData) -> ProfileData;
 	EncodeProfileDataAsInstance: (self: LightingProfilePublic, profile: ProfileData) -> Configuration;
+	--[[
+		Applies the provided profile as the current lighting.
+	]]
 	ApplyProfile: (self: LightingProfilePublic, profile: Instance | ProfileData) -> ();
 	CreateProfileDataFromCurrentLighting: (self: LightingProfilePublic) -> ProfileData;
 	CreateProfileInstanceFromCurrentLighting: (self: LightingProfilePublic) -> Configuration;
