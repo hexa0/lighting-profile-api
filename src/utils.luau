@@ -72,7 +72,7 @@ function utils.ReadInstance(instance: any)
 end
 
 --[[
-	Get a localized string from the lighting profile strings,
+	Get a localized string from the lighting profile API strings,
 	you shouldn't need to call this.
 ]]
 function utils.GetString(key: string): string

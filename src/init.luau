@@ -1,8 +1,8 @@
 --!nocheck
 
 --[[
-	api written by hexa0
-	https://github.com/hexa0/lighting-profile
+	written by hexa0
+	https://github.com/hexa0/lighting-profile-api/
 ]]
 
 local Lighting = game:GetService("Lighting")
@@ -57,7 +57,7 @@ type LightingProfile = LightingProfilePublic & LightingProfilePrivate
 local LightingProfile: any = {} :: LightingProfile
 LightingProfile.INSTANCE = script
 
-local major, minor, patch = 1,2,1
+local major, minor, patch = 1,2,2
 
 LightingProfile.CURRENT_VERSION = {
 	major = major;
@@ -207,9 +207,6 @@ function LightingProfile:CreateProfileDataFromCurrentLighting(): ProfileData
 					repeat
 						name ..= Utils.GetString("api.naming.duplicated-name-append") :: string
 					until not profile.PostEffects[name]
-
-					-- no-longer needed since the original name is stored in the properties
-					-- warn(Utils.GetString("api.warn.duplicated-name"):gsub("ORIGINAL_NAME", child:GetFullName()):gsub("UNIQUE_NAME", name))
 				end
 
 				profile.PostEffects[name] = Utils.ReadInstance(child)
